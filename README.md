@@ -1,89 +1,165 @@
-# Student Performance Prediction System
+# 🎓 Student Performance Prediction System
 
-An educational Machine Learning project that estimates a student's exam score
-from study hours, attendance, previous exam score, assignment score, and sleep hours.
+## 📌 Overview
 
-## Technologies
-- Python
-- Pandas and NumPy
-- Scikit-learn (Random Forest Regression)
-- Streamlit
-- Matplotlib
-- Joblib
+**Student Performance Prediction System** is a Machine Learning-based web application that estimates a student's final exam score using important academic and lifestyle factors.
 
-## Project structure
+The application uses a Random Forest Regression algorithm to analyze student information and predict an estimated exam score out of 100.
+
+Built using Python, Scikit-learn, and Streamlit, it provides an interactive interface where users can enter student details and instantly view prediction results.
+
+## ✨ Features
+
+- 🎓 Predict estimated student exam scores
+- 📚 Analyze daily study hours
+- 📊 Consider student attendance percentage
+- 📝 Evaluate previous exam performance
+- 📋 Include assignment scores
+- 😴 Consider daily sleep hours
+- 🤖 Random Forest Regression model
+- 📈 Visualize predicted exam scores
+- 🎯 Categorize predicted performance:
+  - Excellent
+  - Good
+  - Average
+  - Needs Improvement
+- 🖥️ Interactive Streamlit dashboard
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|---|---|
+| Programming Language | Python |
+| Machine Learning | Scikit-learn |
+| Algorithm | Random Forest Regression |
+| Data Processing | Pandas, NumPy |
+| Visualization | Matplotlib |
+| Model Storage | Joblib |
+| Frontend / Web Framework | Streamlit |
+
+## 📂 Project Structure
+
 ```text
 Student-Performance-Prediction/
+│
 ├── app.py
 ├── train_model.py
 ├── requirements.txt
 ├── README.md
-├── .gitignore
 ├── run_project.bat
+│
 ├── dataset/
-│   └── (student_data.csv is generated during training)
+│   └── student_data.csv (generated during training)
+│
 └── model/
-    └── (student_model.pkl is generated during training)
+    └── student_model.pkl (generated during training)
 ```
 
-## Run on Windows (VS Code)
+## ⚙️ Installation & Setup
 
-1. Install Python 3.10 or newer and VS Code.
-2. Extract this ZIP file.
-3. Open the extracted `Student-Performance-Prediction` folder in VS Code.
-4. Open Terminal > New Terminal.
-5. Create and activate a virtual environment:
-
-   ```powershell
-   python -m venv venv
-   .\venv\Scripts\Activate.ps1
-   ```
-
-   If PowerShell blocks activation, use Command Prompt and run:
-
-   ```cmd
-   venv\Scripts\activate.bat
-   ```
-
-6. Install dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-7. Train the model and generate the sample dataset:
-
-   ```bash
-   python train_model.py
-   ```
-
-8. Start the web app:
-
-   ```bash
-   streamlit run app.py
-   ```
-
-The app should open in your browser. If it does not, open the local URL printed in the terminal.
-
-## Quick start
-On Windows, after Python is installed, you can double-click `run_project.bat`.
-The first run installs dependencies, trains the model, and starts Streamlit.
-An internet connection is needed for installing Python packages.
-
-## GitHub upload
-Create a new GitHub repository, then run these commands in the project folder:
+### 1. Clone the Repository
 
 ```bash
-git init
-git add .
-git commit -m "Initial project upload"
-git branch -M main
-git remote add origin YOUR_REPOSITORY_URL
-git push -u origin main
+git clone https://github.com/your-username/Student-Performance-Prediction.git
 ```
 
-Replace `YOUR_REPOSITORY_URL` with the URL of your own GitHub repository.
+### 2. Navigate to the Project Directory
 
-## Important note
-The project creates a synthetic dataset for demonstration and learning. Its predictions
-are not validated for real academic decisions and should not be treated as actual exam results.
+```bash
+cd Student-Performance-Prediction
+```
+
+### 3. Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### 4. Activate the Virtual Environment
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+### 5. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Train the Machine Learning Model
+
+```bash
+python train_model.py
+```
+
+This step automatically:
+
+- Generates a synthetic student dataset.
+- Splits data into training and testing sets.
+- Trains a Random Forest Regression model.
+- Evaluates the model using MAE and R² Score.
+- Saves the trained model as `student_model.pkl`.
+
+### 7. Run the Application
+
+```bash
+streamlit run app.py
+```
+
+Open the local URL displayed in your terminal to access the application.
+
+## 🧠 Machine Learning Workflow
+
+1. Generate synthetic student performance data.
+2. Select relevant academic and lifestyle features.
+3. Split the dataset into training and testing sets.
+4. Train a Random Forest Regression model.
+5. Evaluate predictions using MAE and R² Score.
+6. Save the trained model using Joblib.
+7. Load the model into the Streamlit application.
+8. Generate estimated exam scores from user inputs.
+
+## 📊 Input Features
+
+| Feature | Description |
+|---|---|
+| Study Hours | Daily study hours |
+| Attendance | Attendance percentage |
+| Previous Score | Previous exam score |
+| Assignment Score | Assignment performance |
+| Sleep Hours | Daily sleep duration |
+
+## 🎯 Performance Categories
+
+| Predicted Score | Category |
+|---|---|
+| 75–100 | Excellent |
+| 60–74.9 | Good |
+| 40–59.9 | Average |
+| Below 40 | Needs Improvement |
+
+## 🔮 Future Improvements
+
+- Train using real-world student datasets.
+- Explore additional regression algorithms.
+- Improve prediction accuracy and validation.
+- Add interactive performance analytics.
+- Include more student-related features.
+- Deploy the application online.
+
+## ⚠️ Disclaimer
+
+This project uses synthetically generated data for educational and demonstration purposes.
+
+The predictions are not scientifically validated for real academic decisions and should not be used to evaluate actual student performance.
+
+## 👨‍💻 Author
+
+**Shivam Sahani**
+
+## 📄 License
+
+This project is intended for educational and learning purposes.
